@@ -5,12 +5,12 @@
 
 import os
 
-suffix = "__FIXED"
+suffix = ""
 
 files = os.listdir(".")
 
 for filename in files:
-    if filename.endswith(".wav") and not filename.endswith(f"{suffix}.wav"):
+    if filename.endswith(".wav") and (suffix == "" or not filename.endswith(f"{suffix}.wav")):
         print("Processing " + filename)
         # Open the file as a byte array
         with open(filename, "rb") as f:
